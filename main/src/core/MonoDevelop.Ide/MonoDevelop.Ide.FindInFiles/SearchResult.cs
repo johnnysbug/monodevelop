@@ -212,6 +212,8 @@ namespace MonoDevelop.Ide.FindInFiles
 			if (trimeStart)
 				result.Append ("…");
 			foreach (var ch in str) {
+				if (ch == '\n' || ch == '\r')
+					continue;
 				if (ch == '\t') {
 					result.Append (tab);
 					continue;
